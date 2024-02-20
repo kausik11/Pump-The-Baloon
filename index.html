@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container"></div>
+    <div class="stem"></div>
+    <button id="pump-btn">Pump</button>
+</body>
+<script>
+    let a = document.querySelector(".container");
+
+    let b = document.getElementById("pump-btn");
+    b.addEventListener("click",
+    (e)=>{
+
+       if (e.target.id == "pump-btn") {
+        const size = getComputedStyle(a).getPropertyValue("--size");
+        a.style.setProperty("--size", parseFloat(size)+0.2);
+        console.log(size); 
+        if(size >= "2.800000000000002"){
+            document.body.innerHTML = `<h1></h1>`
+        }
+       }
+    })
+
+</script>
+</html>
